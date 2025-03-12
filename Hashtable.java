@@ -7,7 +7,7 @@ public abstract class Hashtable {
         table = new HashObject[size];
     }
 
-    public abstract void insert(HashObject[] hashTable, int key);
+    public abstract void insert(HashObject[] hashTable, int key, Object value) throws HashException;
 
     public abstract int find(HashObject[] hashTable, int key);
 

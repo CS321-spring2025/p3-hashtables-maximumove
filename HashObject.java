@@ -1,4 +1,5 @@
 public class HashObject {
+    
     public enum status {
         OCUPIED(0), 
         DEL(1), 
@@ -46,6 +47,10 @@ public class HashObject {
 
     public Object getKey() {
         return key;
+    }
+
+    public void increaseDupCount() {
+        frequency++;
     }
 
     public String toString() {

@@ -6,14 +6,14 @@ public class TwinPrimeGenerator {
 
     public static int GenereateTwinPrimes(int min, int max) {
         if (min >= max) {
-            return null;
+            return 0;
         }
         for (int i=min; i < max; i++) {
             if (isPrime(i) && isPrime(i + 2)) {
                 return i+2;
             }
         }
-        return null;
+        return -1;
     }
 
     public static boolean isPrime(int num) {
