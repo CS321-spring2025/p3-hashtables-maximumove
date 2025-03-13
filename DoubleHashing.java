@@ -4,7 +4,7 @@
  */
 public class DoubleHashing extends Hashtable {
 
-    // *nstance variables.
+    // Instance variables.
     int probe = 0;
     int m;
     int n;
