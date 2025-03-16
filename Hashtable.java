@@ -21,7 +21,7 @@ public abstract class Hashtable {
      * @param int value of the inserted Hash Object.
      * @throws HashException
      */
-    public abstract void insert(HashObject[] hashTable, int key, Object value) throws HashException;
+    public abstract void insert(int key, Object value) throws HashException;
 
     /**
      * Determines in a hash object is in the hash table.
@@ -29,26 +29,30 @@ public abstract class Hashtable {
      * @param int key of the hash object to be searched.
      * @return -1 if object is not found, and index of array if it is found.
      */
-    public abstract int find(HashObject[] hashTable, int key);
+    public abstract int find(int key);
 
     /**
      * Deletes a given hash object if it is found in the table.
      * @param HashObject[] array representing the table.
      * @param int key of the hash object to be deleted.
      */
-    public abstract void delete(HashObject[] hashTable, int key);
+    public abstract void delete(int key);
 
     /**
      * Returns a string representation of the Hash Table.
      * @return string representing the table.
      */
-    public String toString() {
-        String str = "";
-        for (int i=0; i<table.length; i++) {
-            if (table[i].getStatus() == 0) {
-                str += table[i].toString() + "/n";
-            }
-        }
-        return str;
-    }
+    public abstract String toString();
+    // public String toString() {
+    //     String str = "";
+    //     for (int i=0; i<table.length; i++) {
+    //         if (table[i] == null) {
+                
+    //         }
+    //         else if (table[i].getStatus() == 0) {
+    //             str += table[i].toString() + "/n";
+    //         }
+    //     }
+    //     return str;
+    // }
 }

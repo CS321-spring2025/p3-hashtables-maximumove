@@ -29,15 +29,19 @@ public class DoubleHashing extends Hashtable {
      * @throws HashException
      */
     @Override
-    public void insert(HashObject[] hashTable, int key, Object value) throws HashException {
+    public void insert(int key, Object value) {
         HashObject stock = new HashObject(value, key);
-        for(int i=0; i<hashTable.length; i++) {
+        for(int i=0; i<table.length; i++) {
             probe = ((key % m) + i * (1 + (key % (n - 2)) % n)) % m;
-            if (hashTable[probe].getStatus() == 0) {
-                hashTable[probe].increaseDupCount();
+            if (table[probe] == null) {
+                table[probe] = stock;
+                HashObject.status stat = HashObject.status.OCUPIED;
+                table[probe].setStatus(stat);
+                return;
             }
-            if (hashTable[probe].getStatus() != 0) {
-                hashTable[probe] = stock;
+            else if (table[probe].getStatus() == 0) {
+                table[probe].increaseDupCount();
+                return;
             }
         }
     }
@@ -49,30 +53,50 @@ public class DoubleHashing extends Hashtable {
      * @return -1 if object is not found, and index of array if it is found.
      */
     @Override
-    public int find(HashObject[] hashTable, int key) {
-        for (int i=0; i<hashTable.length; i++) {
+    public int find(int key) {
+        for (int i=0; i<table.length; i++) {
             probe = ((key % m) + i * (1 + (key % (n - 2)) % n)) % m;
-            if (hashTable[probe].getKey().equals(key) && hashTable[probe].getStatus() == 0) {
+            if (table[probe] == null) {
+
+            }
+            else if (table[probe].getKey().equals(key) && table[probe].getStatus() == 0) {
                 return probe;
             }
         }
         return -1;
     }
 
-      /**
+    /**
      * Deletes a given hash object if it is found in the table.
      * @param HashObject[] array representing the table.
      * @param int key of the hash object to be deleted.
      */
     @Override
-    public void delete(HashObject[] hashTable, int key) {
-        for (int i=0; i<hashTable.length; i++) {
+    public void delete(int key) {
+        for (int i=0; i<table.length; i++) {
             probe = ((key % m) + i * (1 + (key % (n - 2)) % n)) % m;
-            if (hashTable[probe].getKey().equals(key)) {
-                hashTable[probe].setStatus(HashObject.status.DEL);
+            if (table[probe] == null) {
+
+            }
+            else if (table[probe].getKey().equals(key)) {
+                table[probe].setStatus(HashObject.status.DEL);
+                System.out.println("Removed at index " + probe);
+                return;
             }
         }
         System.out.println("key not in table");
     }
     
+    public String toString() {
+        String str = "";
+        for (int i=0; i<table.length; i++) {
+            if (table[i] == null) {
+                
+            }
+            else if (table[i].getStatus() == 0) {
+                str += table[i].toString() + " At table index " + i + "\n";
+            }
+        }
+        return str;
+    }
 }
