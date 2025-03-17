@@ -1,0 +1,78 @@
+
+--------------------------------------------------------------------------------
+Using Linear Probing
+HashtableExperiment: size of the hash table is 10000
+Inserted 3037802, of which 3037759 are duplicates
+Avg. no. of probes = 1.0
+Using Double Hashing
+HashtableExperiment: size of the hash table is 10000
+Inserted 3037802, of which 3037759 are duplicates
+Avg. no. of probes = 1.0
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Using Linear Probing
+HashtableExperiment: size of the hash table is 10000
+Inserted 3037802, of which 3037759 are duplicates
+Avg. no. of probes = 1.0
+Using Double Hashing
+HashtableExperiment: size of the hash table is 10000
+Inserted 3037802, of which 3037759 are duplicates
+Avg. no. of probes = 1.0
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Using Linear Probing
+HashtableExperiment: size of the hash table is 10000
+Inserted 3037802, of which 3037759 are duplicates
+Avg. no. of probes = 1.0
+Using Double Hashing
+HashtableExperiment: size of the hash table is 10000
+Inserted 3037802, of which 3037759 are duplicates
+Avg. no. of probes = 1.0
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Using Linear Probing
+HashtableExperiment: size of the hash table is 10000
+Inserted 3037802, of which 3037759 are duplicates
+Avg. no. of probes = 1.0
+Using Double Hashing
+HashtableExperiment: size of the hash table is 10000
+Inserted 3037802, of which 3037759 are duplicates
+Avg. no. of probes = 1.0
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Using Linear Probing
+HashtableExperiment: size of the hash table is 10000
+Inserted 3037802, of which 3037759 are duplicates
+Avg. no. of probes = 1.0
+Using Double Hashing
+HashtableExperiment: size of the hash table is 10000
+Inserted 3037802, of which 3037759 are duplicates
+Avg. no. of probes = 1.0
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Using Linear Probing
+HashtableExperiment: size of the hash table is 10000
+Inserted 3037802, of which 3037759 are duplicates
+Avg. no. of probes = 1.0
+Using Double Hashing
+HashtableExperiment: size of the hash table is 10000
+Inserted 3037802, of which 3037759 are duplicates
+Avg. no. of probes = 1.0
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Using Linear Probing
+HashtableExperiment: size of the hash table is 10000
+Inserted 3037802, of which 3037759 are duplicates
+Avg. no. of probes = 1.0
+Using Double Hashing
+HashtableExperiment: size of the hash table is 10000
+Inserted 3037802, of which 3037759 are duplicates
+Avg. no. of probes = 1.0
+--------------------------------------------------------------------------------
+
