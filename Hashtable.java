@@ -38,6 +38,15 @@ public abstract class Hashtable {
      */
     public abstract void delete(int key);
 
+    protected int positiveMod (int dividend, int divisor) {
+        int quotient = dividend % divisor;
+        if (quotient < 0) {
+            quotient += divisor;
+        }
+        return quotient;
+    }
+        
+
     /**
      * Returns a string representation of the Hash Table.
      * @return string representing the table.

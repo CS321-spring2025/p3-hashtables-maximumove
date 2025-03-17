@@ -85,6 +85,14 @@ public class HashObject {
         frequency++;
     }
 
+    public void setProbeCount(int newCount) {
+        probeCount = newCount;
+    }
+
+    public int getProbeCount() {
+        return probeCount;
+    }
+
     /**
      * returns out a string representation of the given hash object.
      * @return string representing hash object

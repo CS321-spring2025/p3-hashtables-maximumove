@@ -7,6 +7,8 @@ public class LinearProbing extends Hashtable {
     // Instance variables.
     int probe = 0;
     int m;
+    int dupCount;
+    int currentProbeCount;
 
     /**
      * Constructor of a new hash table based on linear probing.
@@ -16,6 +18,9 @@ public class LinearProbing extends Hashtable {
     public LinearProbing(int size, int prime) {
         super(size);
         m = prime;
+        probe=0;
+        dupCount=0;
+        currentProbeCount=0;
     }
 
      /**
@@ -29,11 +34,14 @@ public class LinearProbing extends Hashtable {
     public void insert(int key, Object value) {
         HashObject stock = new HashObject(value, key);
         for(int i=0; i<table.length; i++) {
-            probe = (key + i) % m;
+            probe = ((positiveMod(key, table.length)) + i) % m;
+            currentProbeCount++;
             if (table[probe] == null) {
                 table[probe] = stock;
                 HashObject.status stat = HashObject.status.OCUPIED;
                 table[probe].setStatus(stat);
+                table[probe].setProbeCount(currentProbeCount);
+                currentProbeCount = 0;
                 return;
             }
             else if (table[probe].getStatus() == 0) {
@@ -52,7 +60,7 @@ public class LinearProbing extends Hashtable {
     @Override
     public int find(int key) {
         for (int i=0; i<table.length; i++) {
-            probe = ((key % m) + i) % m;
+            probe = ((positiveMod(key, table.length)) + i) % m;
             if (table[probe] == null) {
 
             }
@@ -71,7 +79,7 @@ public class LinearProbing extends Hashtable {
     @Override
     public void delete(int key) {
         for (int i=0; i<table.length; i++) {
-            probe = ((key % m) + i) % m;
+            probe = ((positiveMod(key, table.length)) + i) % m;
             if (table[probe] == null) {
 
             }
