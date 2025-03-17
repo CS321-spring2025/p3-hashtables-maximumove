@@ -13,6 +13,7 @@ public class DoubleHashing extends Hashtable {
     int n;
     int dupCount;
     int currentProbeCount;
+    int totalProbeCount;
 
     /**
      * Constructor of a new hash table that is double hashed.
@@ -27,6 +28,7 @@ public class DoubleHashing extends Hashtable {
             dupCount=0;
             probe=0;
             currentProbeCount = 0;
+            totalProbeCount = 0;
         }
     
     /**
@@ -42,12 +44,13 @@ public class DoubleHashing extends Hashtable {
         for(int i=0; i<table.length; i++) {
             probe =((positiveMod(key, table.length)) + i * (1 + positiveMod(key, table.length - 2) % n)) % m;
             currentProbeCount++;
+            totalProbeCount++;
             if (table[probe] == null) {
                 table[probe] = stock;
                 HashObject.status stat = HashObject.status.OCUPIED;
                 table[probe].setStatus(stat);
-                // table[probe].setProbeCount(currentProbeCount);
-                // currentProbeCount = 0;
+                table[probe].setProbeCount(currentProbeCount);
+                currentProbeCount = 0;
                 return;
             }
             else if (table[probe].getStatus() == 0) {
@@ -55,6 +58,7 @@ public class DoubleHashing extends Hashtable {
                 return;
             }
         }
+        currentProbeCount = 0;
     }
 
     /**
@@ -68,13 +72,16 @@ public class DoubleHashing extends Hashtable {
         for (int i=0; i<table.length; i++) {
             probe = ((positiveMod(key, table.length)) + i * (1 + positiveMod(key, table.length - 2) % n)) % m;
             currentProbeCount++;
+            totalProbeCount++;
             if (table[probe] == null) {
 
             }
             else if (table[probe].getKey().equals(key) && table[probe].getStatus() == 0) {
+                currentProbeCount = 0;
                 return probe;
             }
         }
+        currentProbeCount = 0;
         return -1;
     }
 
@@ -88,16 +95,19 @@ public class DoubleHashing extends Hashtable {
         for (int i=0; i<table.length; i++) {
             probe = ((positiveMod(key, table.length)) + i * (1 + positiveMod(key, table.length - 2) % n)) % m;
             currentProbeCount++;
+            totalProbeCount++;
             if (table[probe] == null) {
 
             }
             else if (table[probe].getKey().equals(key)) {
                 table[probe].setStatus(HashObject.status.DEL);
                 System.out.println("Removed at index " + probe);
+                currentProbeCount = 0;
                 return;
             }
         }
         System.out.println("key not in table");
+        currentProbeCount = 0;
     }
 
     public int getDupCount() {
@@ -105,7 +115,7 @@ public class DoubleHashing extends Hashtable {
     }
 
     public int getProbeCount() {
-        return currentProbeCount;
+        return totalProbeCount;
     }
     
     public String toString() {
@@ -130,7 +140,7 @@ public class DoubleHashing extends Hashtable {
 
                 }
                 else if (table[i].getStatus() == 0) {
-                    out.write(table[i].toString());
+                    out.write(table[i].toString() + "\n");
                 }
             }
             out.close();

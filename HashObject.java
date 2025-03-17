@@ -82,7 +82,7 @@ public class HashObject {
      * Increses the frequency of a given hash object.
      */
     public void increaseDupCount() {
-        frequency++;
+        frequency = frequency + 1;
     }
 
     public int getDupCount() {

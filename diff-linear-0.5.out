@@ -1,6 +1,47 @@
-1c1,47896
-< edition key value: -1887963714 duplicates: 0 probe count: 0the key value: 114801 duplicates: 0 probe count: 0lewis key value: 102866888 duplicates: 0 probe count: 0her key value: 103189 duplicates: 0 probe count: 0conversations key value: 1469953104 duplicates: 0 probe count: 0alice's key value: -914490452 duplicates: 0 probe count: 0getting key value: -74168508 duplicates: 0 probe count: 0to key value: 3707 duplicates: 0 probe count: 0on key value: 3551 duplicates: 0 probe count: 0millennium key value: -1441675048 duplicates: 0 probe count: 0what key value: 3648196 duplicates: 0 probe count: 0adventures key value: -42079389 duplicates: 0 probe count: 0or key value: 3555 duplicates: 0 probe count: 0conversation key value: 740154499 duplicates: 0 probe count: 0chapter key value: 739015757 duplicates: 0 probe count: 0trouble key value: -1053938185 duplicates: 0 probe count: 0by key value: 3159 duplicates: 0 probe count: 0sister key value: -902104540 duplicates: 0 probe count: 0wonderland key value: -682449882 duplicates: 0 probe count: 0fortunately key value: 1173642619 duplicates: 0 probe count: 0labelled key value: -1959244137 duplicates: 0 probe count: 0but key value: 97921 duplicates: 0 probe count: 0in key value: 3365 duplicates: 0 probe count: 0that key value: 3558823 duplicates: 0 probe count: 0seen key value: 3526267 duplicates: 0 probe count: 0chain key value: 94623425 duplicates: 0 probe count: 0hedge key value: 99154469 duplicates: 0 probe count: 0down key value: 3089570 duplicates: 0 probe count: 0it key value: 3371 duplicates: 0 probe count: 0into key value: 3237472 duplicates: 0 probe count: 0get key value: 102230 duplicates: 0 probe count: 0that's key value: -874937069 duplicates: 0 probe count: 0took key value: 3565975 duplicates: 0 probe count: 0tired key value: 110369276 duplicates: 0 probe count: 0mind key value: 3351634 duplicates: 0 probe count: 0flashed key value: -778846065 duplicates: 0 probe count: 0reading key value: 1080413836 duplicates: 0 probe count: 0book key value: 3029737 duplicates: 0 probe count: 0was key value: 117481 duplicates: 0 probe count: 0feel key value: 3138982 duplicates: 0 probe count: 0alice key value: 92903040 duplicates: 0 probe count: 0fulcrum key value: -511491516 duplicates: 0 probe count: 0beginning key value: -1072065315 duplicates: 0 probe count: 0
-\ No newline at end of file
+1,43c1,47896
+< mind key value: 3351634 duplicates: 72512 probe count: 7
+< suddenly key value: -2018140840 duplicates: 43037 probe count: 1
+< alice's key value: -914490452 duplicates: 45973 probe count: 1
+< pocket key value: -982936170 duplicates: 71747 probe count: 15
+< think key value: 110331122 duplicates: 36512 probe count: 22
+< once key value: 3415681 duplicates: 47245 probe count: 1
+< never key value: 104712844 duplicates: 52613 probe count: 23
+< millennium key value: -1441675048 duplicates: 46308 probe count: 1
+< lewis key value: 102866888 duplicates: 108456 probe count: 5
+< adventures key value: -42079389 duplicates: 122933 probe count: 1
+< occurred key value: 792816933 duplicates: 53399 probe count: 31
+< in key value: 3365 duplicates: 159826 probe count: 1
+< time key value: 3560141 duplicates: 38178 probe count: 14
+< fulcrum key value: -511491516 duplicates: 58520 probe count: 1
+< pleasure key value: 1972046765 duplicates: 63820 probe count: 5
+< when key value: 3648314 duplicates: 67429 probe count: 18
+< is key value: 3370 duplicates: 99405 probe count: 1
+< of key value: 3543 duplicates: 194448 probe count: 1
+< could key value: 94851265 duplicates: 36157 probe count: 5
+< i key value: 105 duplicates: 153490 probe count: 1
+< by key value: 3159 duplicates: 69210 probe count: 1
+< so key value: 3676 duplicates: 53483 probe count: 4
+< sitting key value: 2100457676 duplicates: 54940 probe count: 1
+< sleepy key value: -899765118 duplicates: 52736 probe count: 9
+< down key value: 3089570 duplicates: 37157 probe count: 1
+< on key value: 3551 duplicates: 75655 probe count: 3
+< what key value: 3648196 duplicates: 80134 probe count: 6
+< pictures key value: -730119371 duplicates: 65834 probe count: 11
+< the key value: 114801 duplicates: 234050 probe count: 2
+< do key value: 3211 duplicates: 77811 probe count: 8
+< alice key value: 92903040 duplicates: 51777 probe count: 1
+< tired key value: 110369276 duplicates: 45489 probe count: 1
+< wonderland key value: -682449882 duplicates: 32898 probe count: 1
+< into key value: 3237472 duplicates: 38785 probe count: 6
+< very key value: 3616054 duplicates: 44323 probe count: 1
+< you key value: 119839 duplicates: 66473 probe count: 346
+< seemed key value: -906222439 duplicates: 41659 probe count: 3
+< get key value: 102230 duplicates: 42313 probe count: 2
+< chapter key value: 739015757 duplicates: 51262 probe count: 2
+< without key value: 1355153608 duplicates: 40219 probe count: 6
+< use key value: 116103 duplicates: 91281 probe count: 2
+< beginning key value: -1072065315 duplicates: 52944 probe count: 2
+< hole key value: 3208384 duplicates: 65318 probe count: 3
 ---
 > table[0]:  4 1
 > table[1]: enfetter'd 1 1

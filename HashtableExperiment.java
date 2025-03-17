@@ -41,7 +41,7 @@ public class HashtableExperiment {
         double avgProbe = 0;
 
         int prime = TwinPrimeGenerator.GenereateTwinPrimes(30, 500);
-        int size = 100;
+        int size = 10000;
 
         LinearProbing testLinear = new LinearProbing(size, prime);
         DoubleHashing testDouble = new DoubleHashing(size, prime, prime - 2);
