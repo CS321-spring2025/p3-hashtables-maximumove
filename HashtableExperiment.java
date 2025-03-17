@@ -30,12 +30,15 @@ public class HashtableExperiment {
             return;
         }
         int dataSource = Integer.parseInt(args[0]);
-        long loadFactor = Integer.parseInt(args[1]);
+        double loadFactor = Double.parseDouble(args[1]);
         int debugLevel = 0;
         int numOfElems = 0;
         if (args.length == 3) {
             debugLevel = Integer.parseInt(args[2]);
         }
+        int totalDups = 0;
+        int totalProbes = 0;
+        double avgProbe = 0;
 
         int prime = TwinPrimeGenerator.GenereateTwinPrimes(30, 500);
         int size = 100;
@@ -66,18 +69,43 @@ public class HashtableExperiment {
                     if (testLinear.table[key] == null) {
 
                     } else if (testLinear.table[key].getStatus() != 0) {
-                        System.out.println(testLinear.table[key].toString() + ", insert succesful!");
+                        if (i == size*loadFactor) {
+                            System.out.println(testLinear.table[key].toString() + ", insert succesful!");
+                        }
+                        else {
+                            System.out.println(testLinear.table[key].toString() + ", insert succesful!\n");
+                            // totalProbes += obj.
+                        }
                     } else {
-                        System.out.println(testLinear.table[key].toString() + ", inserted duplicate.");
+                        if (i == size*loadFactor) {
+                            System.out.println(testLinear.table[key].toString() + ", inserted duplicate.");
+                            totalDups++;
+                        }
+                        else {
+                            System.out.println(testLinear.table[key].toString() + ", inserted duplicate.\n");
+                            totalDups++;
+                        }
                     }
                     testDouble.insert(key, obj);
 
                     if (testDouble.table[key] == null) {
 
                     } else if (testDouble.table[key].getStatus() != 0) {
-                        System.out.println(testDouble.table[key].toString() + ", insert succesful!");
+                        if (i == size*loadFactor) {
+                            System.out.println(testDouble.table[key].toString() + ", insert succesful!");
+                        }
+                        else {
+                            System.out.println(testDouble.table[key].toString() + ", insert succesful!\n");
+                        }
                     } else {
-                        System.out.println(testDouble.table[key].toString() + ", inserted duplicate.");
+                        if (i == size*loadFactor) {
+                            System.out.println(testDouble.table[key].toString() + ", inserted duplicate.");
+                            totalDups++;
+                        }
+                        else {
+                            System.out.println(testDouble.table[key].toString() + ", inserted duplicate.\n");
+                            totalDups++;
+                        }
                     }
                     numOfElems++;
                 }
@@ -94,21 +122,24 @@ public class HashtableExperiment {
                     if (testLinear.table[key] == null) {
 
                     } else if (testLinear.table[key].getStatus() != 0) {
-                        System.out.println(testLinear.table[key].toString() + ", insert succesful!");
+                        System.out.println(testLinear.table[key].toString() + ", insert succesful!\n");
                     } else {
-                        System.out.println(testLinear.table[key].toString() + ", inserted duplicate.");
+                        System.out.println(testLinear.table[key].toString() + ", inserted duplicate.\n");
+                        totalDups++;
                     }
                     testDouble.insert(obj.hashCode(), obj);
                     if (testDouble.table[key] == null) {
 
                     } else if (testDouble.table[key].getStatus() != 0) {
-                        System.out.println(testDouble.table[key].toString() + ", insert succesful!");
+                        System.out.println(testDouble.table[key].toString() + ", insert succesful!\n");
                     } else {
-                        System.out.println(testDouble.table[key].toString() + ", inserted duplicate.");
+                        System.out.println(testDouble.table[key].toString() + ", inserted duplicate.\n");
+                        totalDups++;
                     }
-                    
+
                     numOfElems++;
                 }
+                
             }
 
             if (dataSource == 3) {
@@ -119,22 +150,24 @@ public class HashtableExperiment {
                         Object obj = line;
                         int key = line.hashCode();
                         testLinear.insert(key, obj);
-                        if (testLinear.table[key] == null) {
+                        // if (testLinear.table[key] == null) {
 
-                        } else if (testLinear.table[key].getStatus() != 0) {
-                            System.out.println(testLinear.table[key].toString() + ", insert succesful!");
-                        } else {
-                            System.out.println(testLinear.table[key].toString() + ", inserted duplicate.");
-                        }
+                        // } else if (testLinear.table[key].getStatus() != 0) {
+                        //     System.out.println(testLinear.table[key].toString() + ", insert succesful!");
+                        // } else {
+                        //     System.out.println(testLinear.table[key].toString() + ", inserted duplicate.");
+                        //     totalDups++;
+                        // }
 
                         testDouble.insert(key, obj);
-                        if (testDouble.table[key] == null) {
+                        // if (testDouble.table[key] == null) {
 
-                        } else if (testDouble.table[key].getStatus() != 0) {
-                            System.out.println(testDouble.table[key].toString() + ", insert succesful!");
-                        } else {
-                            System.out.println(testDouble.table[key].toString() + ", inserted duplicate.");
-                        }
+                        // } else if (testDouble.table[key].getStatus() != 0) {
+                        //     System.out.println(testDouble.table[key].toString() + ", insert succesful!");
+                        // } else {
+                        //     System.out.println(testDouble.table[key].toString() + ", inserted duplicate.");
+                        //     totalDups++;
+                        // }
 
                         numOfElems++;
                     }
@@ -154,6 +187,11 @@ public class HashtableExperiment {
                     testDouble.insert(key, obj);
                     numOfElems++;
                 }
+                // for (int i = 0; i < (size * loadFactor); i++) {
+                //     if (testLinear.find(i) != -1) {
+                //         totalDups += testLinear.table[testLinear.find(i)].getDupCount();
+                //     }
+                // }
             }
 
             if (dataSource == 2) {
@@ -167,6 +205,11 @@ public class HashtableExperiment {
                     testDouble.insert(obj.hashCode(), obj);
                     numOfElems++;
                 }
+                // for (int i = 0; i < (size * loadFactor); i++) {
+                //     if (testLinear.find(i) != -1) {
+                //         totalDups += testLinear.table[testLinear.find(i)].getDupCount();
+                //     }
+                // }
             }
 
             if (dataSource == 3) {
@@ -177,7 +220,17 @@ public class HashtableExperiment {
                         Object obj = line;
                         int key = line.hashCode();
                         testLinear.insert(key, obj);
+                        // if (testLinear.table[key] == null) {
+
+                        // } else if (testLinear.table[key].getStatus() == 0) {
+                        //     totalDups++;
+                        // }
                         testDouble.insert(key, obj);
+                        // if (testDouble.table[key] == null) {
+
+                        // } else if (testDouble.table[key].getStatus() == 0) {
+                        //     totalDups++;
+                        // }
                         numOfElems++;
                     }
                 } catch (IOException e) {
@@ -186,74 +239,75 @@ public class HashtableExperiment {
             }
 
             if (debugLevel == 0) {
-                int totalDups = 0;
-                int totalProbes = 0;
-                for (int i = 0; i < size; i++) {
-                    if (testLinear.table[i] == null) {
+                // for (int i = 0; i < size; i++) {
+                //     if (testLinear.find(i) == -1) {
 
-                    } else {
-                        totalDups += testLinear.table[i].frequency;
-                        totalProbes += testLinear.table[i].probeCount;
-                    }
-                }
-                int avgProbe = totalProbes / numOfElems;
+                //     } else {
+                //         totalDups += testLinear.table[testLinear.find(i)].getDupCount();
+                //         totalProbes += testLinear.table[testLinear.find(i)].probeCount;
+                //     }
+                // }
+
+                totalDups = testLinear.getDupCount();
+                totalProbes = testLinear.getProbeCount();
+                avgProbe = (double)((totalProbes)/(numOfElems));
                 System.out.println("Using Linear Probing");
-                System.out.println("HashtableExperiment: size of the hash table is " + prime);
+                System.out.println("HashtableExperiment: size of the hash table is " + size);
                 System.out.println("Inserted " + numOfElems + ", of which " + totalDups + " are duplicates");
                 System.out.println("Avg. no. of probes = " + avgProbe);
 
-                totalDups = 0;
-                totalProbes = 0;
-                for (int i = 0; i < size; i++) {
-                    if (testDouble.table[i] == null) {
+                totalDups = testDouble.getDupCount();
+                totalProbes = testDouble.getProbeCount();
+                // for (int i = 0; i < size; i++) {
+                //     if (testDouble.find(i) == -1) {
 
-                    } else {
-                        totalDups += testDouble.table[i].frequency;
-                        totalProbes += testDouble.table[i].probeCount;
-                    }
-                }
-                avgProbe = totalProbes / numOfElems;
-                System.out.println("Using Linear Probing");
-                System.out.println("HashtableExperiment: size of the hash table is " + prime);
+                //     } else {
+                //         totalDups += testDouble.table[testDouble.find(i)].frequency;
+                //         totalProbes += testDouble.table[testDouble.find(i)].probeCount;
+                //     }
+                // }
+                avgProbe = (double)((totalProbes)/(numOfElems));
+                System.out.println("Using Double Hashing");
+                System.out.println("HashtableExperiment: size of the hash table is " + size);
                 System.out.println("Inserted " + numOfElems + ", of which " + totalDups + " are duplicates");
                 System.out.println("Avg. no. of probes = " + avgProbe);
             }
 
             else if (debugLevel == 1) {
-                int totalDups = 0;
-                int totalProbes = 0;
-                for (int i = 0; i < size; i++) {
-                    if (testLinear.table[i] == null) {
+                // for (int i = 0; i < size; i++) {
+                //     if (testLinear.find(i) == -1) {
 
-                    } else {
-                        totalDups += testLinear.table[i].frequency;
-                        totalProbes += testLinear.table[i].probeCount;
-                    }
-                }
-                int avgProbe = totalProbes / numOfElems;
+                //     } else {
+                //         totalDups += testLinear.table[i].frequency;
+                //         totalProbes += testLinear.table[i].probeCount;
+                //     }
+                // }
+                totalDups = testLinear.getDupCount();
+                totalProbes = testLinear.getProbeCount();
+                avgProbe = (double)((totalProbes)/(numOfElems));
                 System.out.println("Using Linear Probing");
-                System.out.println("HashtableExperiment: size of the hash table is " + prime);
+                System.out.println("HashtableExperiment: size of the hash table is " + size);
                 System.out.println("Inserted " + numOfElems + ", of which " + totalDups + " are duplicates");
                 System.out.println("Avg. no. of probes = " + avgProbe);
 
-                totalDups = 0;
-                totalProbes = 0;
-                for (int i = 0; i < size; i++) {
-                    if (testDouble.table[i] == null) {
+                totalDups = testDouble.getDupCount();
+                totalProbes = testDouble.getProbeCount();
+                // for (int i = 0; i < size; i++) {
+                //     if (testDouble.find(i) == -1) {
 
-                    } else {
-                        totalDups += testDouble.table[i].frequency;
-                        totalProbes += testDouble.table[i].probeCount;
-                    }
-                }
-                avgProbe = totalProbes / numOfElems;
-                System.out.println("Using Linear Probing");
-                System.out.println("HashtableExperiment: size of the hash table is " + prime);
+                //     } else {
+                //         totalDups += testDouble.table[i].frequency;
+                //         totalProbes += testDouble.table[i].probeCount;
+                //     }
+                // }
+                avgProbe = (double)((totalProbes)/(numOfElems));
+                System.out.println("Using Double Hashing");
+                System.out.println("HashtableExperiment: size of the hash table is " + size);
                 System.out.println("Inserted " + numOfElems + ", of which " + totalDups + " are duplicates");
                 System.out.println("Avg. no. of probes = " + avgProbe);
 
-                testLinear.dumpToFile("linearProbingDump");
-                testDouble.dumpToFile("doubleHashingDump");
+                testLinear.dumpToFile("linear-dump.txt");
+                testDouble.dumpToFile("double-dump.txt");
             }
         }
     }

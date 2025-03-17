@@ -46,12 +46,12 @@ public class DoubleHashing extends Hashtable {
                 table[probe] = stock;
                 HashObject.status stat = HashObject.status.OCUPIED;
                 table[probe].setStatus(stat);
-                table[probe].setProbeCount(currentProbeCount);
-                currentProbeCount = 0;
+                // table[probe].setProbeCount(currentProbeCount);
+                // currentProbeCount = 0;
                 return;
             }
             else if (table[probe].getStatus() == 0) {
-                table[probe].increaseDupCount();
+                dupCount++;
                 return;
             }
         }
@@ -67,6 +67,7 @@ public class DoubleHashing extends Hashtable {
     public int find(int key) {
         for (int i=0; i<table.length; i++) {
             probe = ((positiveMod(key, table.length)) + i * (1 + positiveMod(key, table.length - 2) % n)) % m;
+            currentProbeCount++;
             if (table[probe] == null) {
 
             }
@@ -86,6 +87,7 @@ public class DoubleHashing extends Hashtable {
     public void delete(int key) {
         for (int i=0; i<table.length; i++) {
             probe = ((positiveMod(key, table.length)) + i * (1 + positiveMod(key, table.length - 2) % n)) % m;
+            currentProbeCount++;
             if (table[probe] == null) {
 
             }
@@ -96,6 +98,14 @@ public class DoubleHashing extends Hashtable {
             }
         }
         System.out.println("key not in table");
+    }
+
+    public int getDupCount() {
+        return dupCount;
+    }
+
+    public int getProbeCount() {
+        return currentProbeCount;
     }
     
     public String toString() {

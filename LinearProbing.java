@@ -43,12 +43,12 @@ public class LinearProbing extends Hashtable {
                 table[probe] = stock;
                 HashObject.status stat = HashObject.status.OCUPIED;
                 table[probe].setStatus(stat);
-                table[probe].setProbeCount(currentProbeCount);
-                currentProbeCount = 0;
+                // table[probe].setProbeCount(currentProbeCount);
+                // currentProbeCount = 0;
                 return;
             }
             else if (table[probe].getStatus() == 0) {
-                table[probe].increaseDupCount();
+                dupCount++;
                 return;
             }
         }
@@ -63,6 +63,7 @@ public class LinearProbing extends Hashtable {
     @Override
     public int find(int key) {
         for (int i=0; i<table.length; i++) {
+            currentProbeCount++;
             probe = ((positiveMod(key, table.length)) + i) % m;
             if (table[probe] == null) {
 
@@ -83,6 +84,7 @@ public class LinearProbing extends Hashtable {
     public void delete(int key) {
         for (int i=0; i<table.length; i++) {
             probe = ((positiveMod(key, table.length)) + i) % m;
+            currentProbeCount++;
             if (table[probe] == null) {
 
             }
@@ -93,6 +95,14 @@ public class LinearProbing extends Hashtable {
             }
         }
         System.out.println("key not in table");
+    }
+
+    public int getDupCount() {
+        return dupCount;
+    }
+
+    public int getProbeCount() {
+        return currentProbeCount;
     }
 
     public String toString() {

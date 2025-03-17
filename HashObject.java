@@ -85,6 +85,10 @@ public class HashObject {
         frequency++;
     }
 
+    public int getDupCount() {
+        return frequency;
+    }
+
     public void setProbeCount(int newCount) {
         probeCount = newCount;
     }
