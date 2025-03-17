@@ -1,3 +1,6 @@
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
 /**
  * This class holds a hash table that is linearly probed.
  * @author Troy Berhow
@@ -103,5 +106,23 @@ public class LinearProbing extends Hashtable {
             }
         }
         return str;
+    }
+
+    public void dumpToFile(String fileName) {
+        PrintWriter out;
+        try {
+            out = new PrintWriter(fileName);
+            for (int i=0; i < table.length; i++) {
+                if (table[i] == null) {
+
+                }
+                else if (table[i].getStatus() == 0) {
+                    out.write(table[i].toString());
+                }
+            }
+            out.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Print Writer failed");
+        }
     }
 }

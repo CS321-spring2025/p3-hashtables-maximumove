@@ -1,3 +1,6 @@
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
 /**
  * This is an abstract class that holds the structure and methods for a hash table.
  * @author Troy Berhow
@@ -45,6 +48,8 @@ public abstract class Hashtable {
         }
         return quotient;
     }
+
+    public abstract void dumpToFile(String fileName);
         
 
     /**
