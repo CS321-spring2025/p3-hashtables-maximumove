@@ -110,10 +110,18 @@ public class DoubleHashing extends Hashtable {
         currentProbeCount = 0;
     }
 
+    /**
+     * Returns the number of duplicates in the hashtable
+     * @return number of duplicates
+     */
     public int getDupCount() {
         return dupCount;
     }
 
+    /**
+     * Returns the number of probes preformed on the hashtable.
+     * @return number of probes
+     */
     public int getProbeCount() {
         return totalProbeCount;
     }
